@@ -1,0 +1,44 @@
+#!/bin/bash
+
+#   /////////////////////////////////                      .        .
+#   //  Brandon Equivel             //                        .  .
+#   //  brandon.esquivel@ucr.ac.cr   ///////////............///////                               //////////.............//////    .                              //
+#   //  October, 2020                 //                        .    .      .
+#   ////////////////////////////////                       .
+#         ///           ///
+#       ///               ///
+#     ///                   ///
+#   ////                    /////
+
+
+# Full synthesis script
+
+
+# Perform the high-level synthesis of the behavioral design.
+# This produces a generic structural description (RTLIL) that does not depend
+# on a particular technology. The components used in this description
+# correspond to those of the Yosys synthesizer internal library.
+
+# read design
+read_verilog ./src/counter.v
+
+# elaborate design hierarchy
+hierarchy -check -top contador
+
+# the high-level stuff
+proc; opt; fsm; opt; memory; opt
+
+# mapping to internal cell library
+techmap; opt
+
+# mapping flip-flops to cmos_cells.lib
+dfflibmap -liberty ./lib/cmos_cells.lib
+
+# mapping logic to cmos_cells.lib
+abc -liberty ./lib/cmos_cells.lib
+
+# cleanup
+clean
+
+# write synthesized design
+write_verilog ./syn/counter_syn.v
