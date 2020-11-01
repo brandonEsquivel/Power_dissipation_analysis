@@ -1,9 +1,9 @@
 `timescale 1ns/1ps
 
 `include "./src/libreria.v"
-//`include "./src/sumador_logico.v"
+`include "./src/sumador_logico.v"
 `include "./src/sumador_rizado.v"
-//`include "./src/sumador_look.v"
+`include "./src/sumador_look.v"
 
 // -----------------------------------------------
 // Contadores de transiciónes
@@ -64,9 +64,9 @@ module BancoPruebas;
   // Sumador lookahead usa contador 2 de la memoria
   // ---------------------------------------------------------------
 
-  SUM_RIZADO sumadorRizado (oprA, oprB, 1'b0, Suma, carry_rizado);                    // Instancia de sumador de rizado
-  //SUM8_LOGICO #(1)  sumadorLogico (oprA, oprB, 1'b0, Suma_logico, carry_logico);          // Instancia de sumador logico
-  //SUM8_LOOKAHEAD #(2) sumadorLookahead (oprA, oprB, 1'b0, Suma_look, carry_look);         // Instancia de sumador look ahead
+  SUM_RIZADO #(0) sumadorRizado (oprA, oprB, 1'b0, Suma, carry_rizado);                    // Instancia de sumador de rizado
+  SUM8_LOGICO #(1)  sumadorLogico (oprA, oprB, 1'b0, Suma_logico, carry_logico);          // Instancia de sumador logico
+  SUM8_LOOKAHEAD #(2) sumadorLookahead (oprA, oprB, 1'b0, Suma_look, carry_look);         // Instancia de sumador look ahead
 
   initial
     begin
@@ -95,7 +95,7 @@ module BancoPruebas;
       oprB = $random(semilla);
 
       // Código ciclico por el número de sumas deseadas.
-      repeat (99)
+      repeat (4999)
         begin
           #50
 	         $display ("No. Suma = %d: Operador A = %d, Operador B = %d, Sumador_1 = %d, Sumador_2 = %d, Sumador_3=%d",Contador_sumas,oprA,oprB,Suma,Suma_logico,Suma_look);

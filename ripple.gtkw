@@ -1,0 +1,62 @@
+[*]
+[*] GTKWave Analyzer v3.3.86 (w)1999-2017 BSI
+[*] Sun Nov  1 00:41:07 2020
+[*]
+[dumpfile] "/home/bran/Documentos/repositories/Power_dissipation_analysis/Sumadores.vcd"
+[dumpfile_mtime] "Sun Nov  1 00:29:45 2020"
+[dumpfile_size] 57464
+[savefile] "/home/bran/Documentos/repositories/Power_dissipation_analysis/ripple.gtkw"
+[timestart] 0
+[size] 1853 919
+[pos] -29 -29
+*-18.463638 86000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] BancoPruebas.
+[sst_width] 223
+[signals_width] 184
+[sst_expanded] 1
+[sst_vpaned_height] 264
+@200
+-RIZADO
+-Inputs
+@24
+BancoPruebas.sumadorRizado.a[7:0]
+@204
+-
+@24
+BancoPruebas.sumadorRizado.b[7:0]
+@204
+-
+@24
+BancoPruebas.sumadorRizado.ci
+@204
+-
+-Outputs
+@24
+BancoPruebas.sumadorRizado.s[7:0]
+@204
+-
+@800024
+BancoPruebas.sumadorRizado.carry[7:0]
+@28
+(0)BancoPruebas.sumadorRizado.carry[7:0]
+(1)BancoPruebas.sumadorRizado.carry[7:0]
+(2)BancoPruebas.sumadorRizado.carry[7:0]
+(3)BancoPruebas.sumadorRizado.carry[7:0]
+(4)BancoPruebas.sumadorRizado.carry[7:0]
+(5)BancoPruebas.sumadorRizado.carry[7:0]
+(6)BancoPruebas.sumadorRizado.carry[7:0]
+(7)BancoPruebas.sumadorRizado.carry[7:0]
+@1001200
+-group_end
+@204
+-
+@24
+BancoPruebas.sumadorRizado.co
+@200
+-
+@24
+BancoPruebas.mem_trans.LE
+BancoPruebas.mem_trans.dato[31:0]
+BancoPruebas.mem_trans.dir[1:0]
+[pattern_trace] 1
+[pattern_trace] 0

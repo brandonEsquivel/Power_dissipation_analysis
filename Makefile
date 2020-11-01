@@ -104,8 +104,7 @@ cripple:
 .PHONY: gtkwavetest
 
 gtkwaveripple:
-	gtkwave Sumadores.vcd
-	#config_ripple.gtkw
+	gtkwave Sumadores.vcd ripple.gtkw
 
 
 
