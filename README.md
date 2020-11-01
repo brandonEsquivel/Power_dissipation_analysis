@@ -19,7 +19,7 @@ three adders are analyzed: logical adder, ripple adder and look ahead adder
 
 if you feel lazy, just:
 
---make All"adder"--
+--make All--
 
 inside the makefile you can find detailed comments of the complation, synth and simulation steps.
 
