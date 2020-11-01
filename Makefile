@@ -90,13 +90,13 @@ YOSYS = ./yosys/
 #******************************************************************************
 #### 						make the complete test
 #******************************************************************************
-#if you feel lazy, just make all<adder>.
+#if you feel lazy, just make all.
 
-Allripple: 	clean cripple gtkwaveripple
+All: 	clean cadders gtkwaveripple
 
 ## individual steps
 
-cripple:
+cadders:
 	iverilog -o $(OVVP)$(_VVP_TEST) $(TESTBENCHES)$(_TB)
 	vvp $(OVVP)$(_VVP_TEST) > $(LOG)$(_VVP_TEST)_log.txt
 

@@ -1,0 +1,59 @@
+[*]
+[*] GTKWave Analyzer v3.3.86 (w)1999-2017 BSI
+[*] Sun Nov  1 05:47:40 2020
+[*]
+[dumpfile] "/home/bran/Documentos/repositories/Power_dissipation_analysis/Sumadores.vcd"
+[dumpfile_mtime] "Sun Nov  1 05:14:04 2020"
+[dumpfile_size] 31634
+[savefile] "/home/bran/Documentos/repositories/Power_dissipation_analysis/delays.gtkw"
+[timestart] 0
+[size] 1853 919
+[pos] -1 -1
+*-15.430383 261710 104000 111000 113000 119000 154000 158000 160000 204000 241000 226000 227000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] BancoPruebas.
+[sst_width] 223
+[signals_width] 184
+[sst_expanded] 1
+[sst_vpaned_height] 264
+@204
+-ripple
+@24
+BancoPruebas.sumadorRizado.a[7:0]
+@204
+-
+@24
+BancoPruebas.sumadorRizado.b[7:0]
+@204
+-
+@24
+BancoPruebas.sumadorRizado.s[7:0]
+@204
+-
+-logic
+-
+@24
+BancoPruebas.sumadorLogico.a[7:0]
+@204
+-
+@24
+BancoPruebas.sumadorLogico.b[7:0]
+@204
+-
+@24
+BancoPruebas.sumadorLogico.s[7:0]
+@204
+-
+-look ahead
+-
+@24
+BancoPruebas.sumadorLookahead.a[7:0]
+@204
+-
+@24
+BancoPruebas.sumadorLookahead.b[7:0]
+@204
+-
+@24
+BancoPruebas.sumadorLookahead.s[7:0]
+[pattern_trace] 1
+[pattern_trace] 0

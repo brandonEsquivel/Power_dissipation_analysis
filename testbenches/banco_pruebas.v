@@ -90,18 +90,31 @@ module BancoPruebas;
       #50
       // Cada llamada de una suma se va a variar el contador de sumas
       Contador_sumas = Contador_sumas + 1;
+      // DESCOMENTAR ESTO PARA GENERACION ALEATORIA DE SUMAS 
       //Primer par de operandos para los sumadores
-      oprA = $random(semilla);
-      oprB = $random(semilla);
+      //oprA = $random(semilla);
+      //oprB = $random(semilla);
 
       // Código ciclico por el número de sumas deseadas.
-      repeat (4999)
+      repeat (1)      // COLOQUE ACA EL NUMERO DE SUMAS A REALIZAR - 1 
         begin
           #50
 	         $display ("No. Suma = %d: Operador A = %d, Operador B = %d, Sumador_1 = %d, Sumador_2 = %d, Sumador_3=%d",Contador_sumas,oprA,oprB,Suma,Suma_logico,Suma_look);
 	          Contador_sumas = Contador_sumas + 1;
-            oprB = $random(semilla);
-            oprA = $random(semilla);
+            oprB = 8'b00000000;  //$random(semilla);
+            oprA = 8'b00000000; //$random(semilla);
+            // SOLO SE DEJA LO ANTERIOR Y SE COMENTA LO SIGUIENTE HASTA EL END, PARA VOLVER A LA GENERACION ALEATORIA, QUITANDO LOS VALORES TRUNCADOS ESPECIFICOS
+            #50
+	         $display ("No. Suma = %d: Operador A = %d, Operador B = %d, Sumador_1 = %d, Sumador_2 = %d, Sumador_3=%d",Contador_sumas,oprA,oprB,Suma,Suma_logico,Suma_look);
+	          Contador_sumas = Contador_sumas + 1;
+            oprB = 8'b00000001;  //$random(semilla);
+            oprA = 8'b00000000;  //$random(semilla);
+
+            #50
+	         $display ("No. Suma = %d: Operador A = %d, Operador B = %d, Sumador_1 = %d, Sumador_2 = %d, Sumador_3=%d",Contador_sumas,oprA,oprB,Suma,Suma_logico,Suma_look);
+	          Contador_sumas = Contador_sumas + 1;
+            oprB = 8'b00000001;  //$random(semilla);
+            oprA = 8'b11111111;  //$random(semilla);
         end
 
       #50 $display ("No. Suma = %d: Operador A = %d, Operador B = %d, Sumador_1 = %d, Sumador_2 = %d, Sumador_3=%d",Contador_sumas,oprA,oprB,Suma,Suma_logico,Suma_look);

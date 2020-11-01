@@ -11,7 +11,7 @@ module sumador_completo (a, b, ci, s, co);      // see complete adder diagram on
   input wire a,b,ci;
   output reg s,co;
   wire s1,s2,s3,s4,s5,s6;
-
+/*
   xor2_p xor1(
     //INPUTS
     .c     (a),
@@ -27,7 +27,16 @@ module sumador_completo (a, b, ci, s, co);      // see complete adder diagram on
     // OUTPUTS
     .a     (s2)
   );
-
+*/
+// new designe, with only one Xor 3 inputs
+  xor3_p xor1(
+    //INPUTS
+    .c     (a),
+    .b     (b),
+    .d     (ci),
+    // OUTPUTS
+    .a     ( s2)
+  );
 
 // carry logic
 
