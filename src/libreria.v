@@ -1,4 +1,6 @@
-`include "definiciones.v"
+`timescale 1ns/1ps
+
+`include "./src/definiciones.v"
 
 // -----------------------------------------------
 // Modulos de compuertas

@@ -3,7 +3,7 @@
 // -----------------------------------------------
 // Entradas: A, B, Cin
 // Salida Cout y S
-
+`timescale 1ns/1ps
 
 module sumador_completo (a, b, ci, s, co);      // see complete adder diagram on docs
   parameter
@@ -168,8 +168,8 @@ module SUM_RIZADO(a, b, ci, s, co);
     .co     (carry[7])
   );
 
-  always@(* /*carry[7],sn[7]*/) begin
-    s = sn;
+  always@(*) begin
+    s = sn[7:0];
     co = carry[7];
   end
 

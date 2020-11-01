@@ -8,7 +8,7 @@
 
 
 # 	Makefile logic: this is a specific version of a very general makefile for synthesis, compilation and simulation.
-# To create this file you need these files:   -- checker.v clock.v contador<X>.v counters_tb.v driver.v scoreboard.v top_tb.v
+# To create this file you need these files:   --banco_pruebas.v definiciones.v libreria.v sumador_logico.v sumador_rizado.v sumador_look.v
 
 #if you feel lazy, just make all.
 
@@ -57,37 +57,27 @@ LIB = ./lib/
 LOG = ./log/
 
 SRC = ./src/
-_CHECKER = checker.v
-_CLOCK = clock.v
-_MONITOR = monitor.v
-_SB = scoreboard.v
-_CONTADOR = counter.v
+_LOGIC = sumador_logico.v
+_LOOK = sumador_look.v
+_RIPPLE = sumador_rizado.v
+_DEF = definiciones.v
 
 SYN = ./syn/
-_CONTADOR_SYN = counter_syn.v
-
-
 
 TESTBENCHES = ./testbenches/
-_COUNTERS_TB =  counters_tb.v
-_TOP_TB = top_tb.v
-
+_TB =  banco_pruebas.v
 
 TESTERS = ./testers/
-_DRIVER = driver.v
 
-
-_VCD_TEST = test.vcd
-
+_VCD_TEST_ripple = Sumadores.vcd
 
 
 OVVP = ./vvp/
-_VVP_TEST = test.vvp
+_VVP_TEST = Sumadores.vvp
 
 
 
 YOSYS = ./yosys/
-_Y_COUNT = counter.ys
 
 
 #******************************************************************************
@@ -100,31 +90,24 @@ _Y_COUNT = counter.ys
 #******************************************************************************
 #### 						make the complete test
 #******************************************************************************
-#if you feel lazy, just make all<count>.
+#if you feel lazy, just make all<adder>.
 
-Allcount: 	clean ycount rcount ccount gtkwave
-
-AllcountA: 	clean ycount rcount ccount gtkwaveA
+Allripple: 	clean cripple gtkwaveripple
 
 ## individual steps
 
-ycount:
-	yosys $(YOSYS)$(_Y_COUNT)
-
-rcount:
-	sed -i ' s/contador/contador_syn/g' $(SYN)$(_CONTADOR_SYN)
-
-ccount:
-	iverilog -o $(OVVP)$(_VVP_TEST) -gspecify $(TESTBENCHES)$(_TOP_TB)
+cripple:
+	iverilog -o $(OVVP)$(_VVP_TEST) $(TESTBENCHES)$(_TB)
 	vvp $(OVVP)$(_VVP_TEST) > $(LOG)$(_VVP_TEST)_log.txt
 
 #target phony
 .PHONY: gtkwavetest
-gtkwave:
-	gtkwave $(_VCD_TEST) config.gtkw
 
-gtkwaveA:
-	gtkwave $(_VCD_TEST) configA.gtkw
+gtkwaveripple:
+	gtkwave Sumadores.vcd
+	#config_ripple.gtkw
+
+
 
 
 #******************************************************************************
